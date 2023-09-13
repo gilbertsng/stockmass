@@ -19,7 +19,7 @@ https://github.com/gilbertsng/stockmass
 14. Ketika github sudah terupdate, saya bisa melakukan deploy di adaptable dengan cara menghubungkan ke repo saya.
 
 ### Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
-<img src="/Foto//foto.bagan.jpg">
+<img src="/Foto//foto.bagan.png">
 
 ### Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
 Virtual environment merupakan tools untuk membuat lingkungan python virtual yang terisolasi atau tidak bisa diakses dari dunia luar dan kita menggunakan virtual environment untuk membantu dalam mengisolasi dependensi proyek, menghindari konflik antara paket, dan menjaga instalasi yang bersih. Membuat aplikasi web berbasis Django tanpa menggunakan virtual environment bisa saja tetapi, hal ini tidak disarankan supaya terhindar terjadinya project tidak terisolasi. 
