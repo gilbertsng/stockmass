@@ -31,4 +31,42 @@ MVT atau yang biasa disebut Model-View-Template, digunakan dalam Django, serupa 
 
 MVVM atau Model-View-ViewModel merupakan pengembangan software yang memisahkan Model (data), View (tampilan), dan ViewModel (perantara antara data dan tampilan), dan biasanya fokus ke pemisahan antara tampilan, logika, dan data.
 
+### Apa perbedaan antara form POST dan form GET dalam Django?
 
+Form POST menggunakan metode di mana data dikirim sebagai bagian dari permintaan HTTP POST, form POST digunakan ketika perlu mengirim data yang sifatnya rahasia (data pribadi atau kata sandi). Data ini tidak muncul di URL, dan metode ini dapat mengirim data yang lebih besar. Biasanya, dalam Django, penggunaan metode POST berhubungan dengan mengirimkan data yang nantinya akan diproses atau disimpan di server.
+
+sedangkan untuk Form GET merupakan cara di mana data dikirim sebagai bagian dari URL yang bentuknya string query. form GET digunakan ketika ingin berbagi data dengan mudah atau ketika pengguna dapat melihat data yang dikirim atau menyimpannya sebagai bookmark. 
+Ini berguna saat Anda ingin berbagi data dengan mudah atau ingin pengguna dapat melihat data yang dikirim atau menyimpannya sebagai bookmark. Penggunaan metode GET seringkali terkait dengan tindakan pencarian atau penyaringan, tetapi perlu diingat bahwa data yang dikirimkan melalui GET memiliki batasan panjang URL dan kurang cocok untuk data yang berukuran besar atau bersifat rahasia.
+
+### Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
+XML atau eXtensible Markup Language merupakan format yang fleksibel yang memungkinkan penggunaan tag dan atribut yang dapat disesuaikan, biasanya digunakan untuk pertukaran data antara aplikasi yang berbeda atau untuk keperluan konfigurasi. XML tidak memiliki format bawaan untuk representasi data yang lebih sederhana.
+
+JSON atau JavaScript Object Notation merupakan format ringkas yang lebih mudah dibaca dan sangat efisien dalam pertukaran data antar aplikasi web dan API karena kemampuannya yang baik dalam merepresentasikan data struktur beranak dan berulang.Biasanya digunakan dalam pengembangan web modern dan API karena ringan dan mudah diuraikan oleh JavaScript.
+
+HTML atau HyperText Markup Language merupakan bahasa markup yang digunakan untuk membuat tampilan halaman web dan tidak digunakan untuk pertukaran data secara langsung. HTML memiliki struktur khusus untuk mengatur tampilan halaman web, sementara XML dan JSON lebih tentang representasi data.
+
+### Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
+Alasan JSON sering digunakan dalam pertukaran data antara aplikasi web modern karena :
+
+Ringkas dan Mudah Dibaca: 
+--> JSON memiliki struktur yang padat dan mudah dimengerti, sehingga menjadi pilihan yang sempurna untuk pertukaran data antara aplikasi web.
+
+Kompatibel dengan JavaScript: 
+--> JSON adalah bagian yang terintegrasi dengan JavaScript, sehingga dengan mudah dapat diurai dan dimanfaatkan oleh aplikasi web yang dikembangkan dengan menggunakan JavaScript.
+
+Mudah Diproses: 
+--> JSON memiliki format yang dapat dengan mudah diolah oleh berbagai bahasa pemrograman, sehingga dapat digunakan secara efektif dalam berbagai teknologi dan platform.
+
+### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+1. Pertama saya membuat file dengan nama forms.py, lalu file tersebut diisi dengan variabel sesuai dengan model yang didefinisikan di file models.py
+2. Kedua saya memodifikasi beberapa pada file view.py, dengan cara membuat fungsi baru "create_product" tujuannya untuk membuat produk sesuai input user. setelah itu, saya mengubah bagian fungsi show_main yang ada di file views.py agar produk yang diinput bisa disimpan.
+3. Ketiga saya membuat file create_product.html. Lalu, membuat file create_product.html untuk tampilan pada input produk. Didalam file ini ada tombol add new product yang mengarahkan user ke page input produk. Setelah diinput, user akan kembali ke main page untuk melihat input produk.
+4. Terakhir adalah routing, dalam langkah ini saya melakukan routing pada semua fungsi. Dalam langkah ini saya menambahkan beberapa import yang diperlukan pada file views.py, lalu saya tambahkan juga beberapa path baru untuk manggil fungsi melalui URL. Dibawah ini adalah isi dari urls.py saya:
+<img src="/Foto//urls">
+
+5. Screenshot hasil akses URL pada Postman.
+<img src="/Foto//foto.html.png">
+<img src="/Foto//foto.xml.png">
+<img src="/Foto//foto.json.png">
+<img src="/Foto//foto.xmlid.png">
+<img src="/Foto//foto..png">
