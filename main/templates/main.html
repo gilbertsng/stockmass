@@ -1,6 +1,74 @@
-<h1>Shop the Gil Page</h1>
+{% extends 'base.html' %}
 
-<h5>Name: </h5>
-<p>{{ name }}<p>
-<h5>Class: </h5>
-<p>{{ class }}<p>
+{% block content %}
+    <h1 style="text-align:center">Shopping List Page</h1>
+    <style>
+        h5 {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: medium;
+        }
+      </style>
+    <h5>Name:</h5>
+    <p style="font-family:courier;">{{name}}</p>
+
+    <h5>Class:</h5>
+    <p style="font-family:courier;">{{class}}</p>
+    <html>
+<head>
+<style>
+table, th, td {
+  border: 5px solid navy;
+  border-radius: 10px;
+  /* width: 100%; */
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 5px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style >
+</head>
+<body>
+    <table style="width:100%">
+        <tr>
+            <th style="text-align:center">Name</th>
+            <th style="text-align:center">Price</th>
+            <th style="text-align:center">Description</th>
+            <th style="text-align:center">Date Added</th>
+        </tr>
+    
+        {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
+    
+        {% for product in products %}
+            <tr>
+                <td style="text-align:center">{{product.name}}</td>
+                <td style="text-align:center">{{product.price}}</td>
+                <td style="text-align:center">{{product.description}}</td>
+                <td style="text-align:center">{{product.date_added}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    
+    <br />
+    
+    <a href="{% url 'main:create_product' %}">
+        <style>
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            }
+        </style>
+        <div class="center">
+        <button>
+            Add New Product
+        </button>
+        </div>
+    </a>
+{% endblock content %}
