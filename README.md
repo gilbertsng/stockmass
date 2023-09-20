@@ -65,8 +65,13 @@ Mudah Diproses:
 <img src="/Foto//urls">
 
 5. Screenshot hasil akses URL pada Postman.
+a. HTML
 <img src="/Foto//foto.html.png">
+b. XML
 <img src="/Foto//foto.xml.png">
+c. JSON
 <img src="/Foto//foto.json.png">
+d. XML by ID
 <img src="/Foto//foto.xmlid.png">
-<img src="/Foto//foto..png">
+e. JSON by ID
+<img src="/Foto//foto.jsonid.png">
