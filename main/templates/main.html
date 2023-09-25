@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1 style="text-align:center">Shopping List Page</h1>
+    <h1 style="text-align:center">STOCKMASS</h1>
     <style>
         h5 {
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -53,7 +53,7 @@ tr:nth-child(even) {
             </tr>
         {% endfor %}
     </table>
-    
+    <h3>Kamu menyimpan {{total_products}} product pada aplikasi ini</h3>
     <br />
     
     <a href="{% url 'main:create_product' %}">
@@ -65,10 +65,18 @@ tr:nth-child(even) {
 
             }
         </style>
+        
         <div class="center">
         <button>
             Add New Product
         </button>
+        
         </div>
     </a>
+    <a href="{% url 'main:logout' %}">
+        <button>
+            Logout
+        </button>
+    </a>
+    <h5>Sesi terakhir login: {{ last_login }}</h5>
 {% endblock content %}
