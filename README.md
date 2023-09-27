@@ -62,7 +62,7 @@ Mudah Diproses:
 2. Kedua saya memodifikasi beberapa pada file view.py, dengan cara membuat fungsi baru "create_product" tujuannya untuk membuat produk sesuai input user. setelah itu, saya mengubah bagian fungsi show_main yang ada di file views.py agar produk yang diinput bisa disimpan.
 3. Ketiga saya membuat file create_product.html. Lalu, membuat file create_product.html untuk tampilan pada input produk. Didalam file ini ada tombol add new product yang mengarahkan user ke page input produk. Setelah diinput, user akan kembali ke main page untuk melihat input produk.
 4. Terakhir adalah routing, dalam langkah ini saya melakukan routing pada semua fungsi. Dalam langkah ini saya menambahkan beberapa import yang diperlukan pada file views.py, lalu saya tambahkan juga beberapa path baru untuk manggil fungsi melalui URL. Dibawah ini adalah isi dari urls.py saya:
-<img src="/Foto//urls">
+<img src="/Foto//urls.png">
 
 5. Screenshot hasil akses URL pada Postman.
 a. HTML
