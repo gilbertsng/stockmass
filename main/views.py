@@ -23,6 +23,7 @@ def show_main(request):
         'name': request.user.username, # Nama kamu
         'class': 'PBP F', # Kelas PBP kamu
         'products': products,
+        'total_products': products.__len__(),
         'last_login': request.COOKIES['last_login'],
 
     }

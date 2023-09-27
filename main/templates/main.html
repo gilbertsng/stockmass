@@ -53,8 +53,8 @@ tr:nth-child(even) {
             </tr>
         {% endfor %}
     </table>
-    <h3>Kamu menyimpan {{total_products}} product pada aplikasi ini</h3>
     <br />
+    <h3>Kamu menyimpan {{total_products}} product pada aplikasi ini</h3>
     
     <a href="{% url 'main:create_product' %}">
         <style>
@@ -78,5 +78,5 @@ tr:nth-child(even) {
             Logout
         </button>
     </a>
-    <h5>Sesi terakhir login: {{ last_login }}</h5>
+    <h4>Sesi terakhir login: {{ last_login }}</h4>
 {% endblock content %}
