@@ -75,3 +75,66 @@ d. XML by ID
 <img src="/Foto//foto.xmlid.png">
 e. JSON by ID
 <img src="/Foto//foto.jsonid.png">
+
+### Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
+Django UserCreationForm adalah salah satu bentuk formulir bawaan (built-in form) yang disediakan oleh Django, sebuah framework pengembangan web Python yang populer. Form ini digunakan untuk membuat dan mendaftarkan pengguna baru dalam aplikasi web kita. UserCreationForm telah dirancang khusus untuk memudahkan proses pembuatan akun pengguna dengan informasi seperti username, password1, dan password2 (yang digunakan untuk konfirmasi password).
+
+Berikut adalah beberapa kelebihan dan kekurangan dari Django UserCreationForm:
+
+(+)
+1. Penggunaannya sangat mudah karena UserCreationForm merupakan salah satu form yang sudah disediakan Django sehingga dapat digunakan dengan mudah karena membuatnya tidak perlu menulis kode form dari awal.
+2. Validasi yang otomatis, ini digunakan untuk menyocokan antara password yang dimasukkan dengan konfirmas password dan form ini dapat mecegah kesalahan dalam proses pendaftaran.
+3. Form ini berintegrasi dengan baik dengan Django Authentication (Setelah user mendaftarkan akun, user dapat login ke aplikasi tanpa penyesuaian tambahan).
+4. Form ini menjaga keamanan password user.
+
+(-)
+1. Form ini hanya memiliki username, password, dan konfirmasi password. Hal ini tidak mencukupi jika kita membutuhkan informasi tambahan dari user seperti alamat email, nama lengkap dan lain-lain sehingga kita harus menambahkan beberapa bidang secara manual jika diperlukan.
+2. Tampilan dari form ini sangat sederhana
+3. Form ini hanya dapat digunakan dalam aplikasi Django sehingga ketika ingin mengembangkan aplikasi di luar Django, kita harus mencari solusi autentikasi user yang berbeda
+4. Validasi yang dimiliki form ini terbatas karena hanya memeriksa antara kesamaan password yang diinput dengan konfirmasi password. Kita harus menambahkan validasi lagi, seperti validasi alamat email yang unik.
+5. Meskipun UserCreationForm mencakup validasi otomatis untuk password, masih penting untuk mengimplementasikan praktik keamanan tambahan seperti hashing password untuk melindungi password pengguna dengan lebih baik.
+
+### Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
+Autentikasi merupakan proses verifikasi identitas pengguna yang mencoba akses ke suatu aplikasi dengan username dan password. Autentikasi digunakan untuk memastikan bahwa user yang mengakses aplikasi merupakan user yang sah dan memiliki izin untuk masuk ke suatu aplikasi. Django menyediakan sistem autentikasi yang kuat yang mencakup model pengguna (User model) yang dapat digunakan untuk mengelola data pengguna seperti nama pengguna dan kata sandi, serta berbagai alat untuk mengatur autentikasi, termasuk form bawaan seperti UserCreationForm dan AuthenticationForm.
+
+Otorisasi merupakan proses yang terjadi setelah autentikasi berhasil. Hal ini menentukan apa yang diizinkan pengguna lakukan dalam aplikasi, seperti mengakses halaman tertentu, menggunakan fitur khusus, atau mengubah data. Otorisasi digunakan untuk memastikan user hanya memiliki akses ke bagian-bagian dari aplikasi sesuai peran mereka. Ini membatasi aksi apa yang dapat mereka lakukan dalam aplikasi tersebut.
+Django menyediakan mekanisme otorisasi melalui sistem izin (permissions) dan grup pengguna (user groups). Anda dapat mengatur izin untuk model dan tindakan tertentu, dan kemudian menetapkan izin-izin ini kepada pengguna atau grup pengguna. Django juga memiliki dekorator seperti @login_required yang memungkinkan Anda mengontrol akses pengguna ke tampilan tertentu.
+
+Pentingnya autentikasi dan otorisasi dalam aplikasi web adalah sebagai berikut:
+1. Keamanan, autentikasi memastikan bahwa user yang memiliki izin dapat mengakses aplikasi dan otorisasi memastikan bahwa user dapat melakukan aksi sesuai dengan peran user yang dapat melindungi data dan fungsi sensitif.
+2. Menggunakan kedua hal tersebut dapat meningkatkan pengalaman user dengan memastikan bahwa user dapat memiliki akses yang tepat ke fitur" yang sesuai dengan peran mereka dalam suatu aplikasi.
+
+### Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
+Cookies dalam konteks aplikasi web merupakan potongan" kecil dari data yang disimpan pada sisi klien (web browser) saat user berinteraksi dengan aplikasi web. Cookies digunakan untuk menyimpan informasi yang diperlukan agar dapat mengenali user, melacak sesi, atau menyimpan preferensi pengguna dan cookies berguna untuk mengingat informasi tertentu dari user seperti kunjungan sebelumnya sehingga user tidak perlu memasukkan data yang sama berulang-ulang.
+
+Cara Django mengelola data sesi user:
+1. Mengidentifikasi User
+2. Penyimpanan Data Sesi
+3. Pengiriman Cookie ke Browser
+4. Penggunaan Cookie pada Setiap Permintaan
+5. Penghapusan Otomatis
+
+### Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
+Penggunaan cookies aman secara default dalam pengembangan web jika diimplementasikan dengan benar, tetapi ada beberapa risiko potensial yang harus diwaspadai seperti,
+1. Data yang disadap, cookies biasanya tersimpan pada sisi klien, dan meskipun mereka sering dienkripsi, mereka masih dapat rentan terhadap penyadapan data jika SSL/TLS (HTTPS) tidak diaktifkan. Dalam skenario tanpa HTTPS, data yang disimpan dalam cookies dapat dengan mudah dibaca oleh pihak yang tidak berwenang jika ada serangan man-in-the-middle.
+2. Jika aplikasi rentan terhadap serangan XSS, penyerang dapat menyisipkan skrip berbahaya ke dalam halaman web yang akan dieksekusi oleh browser user. Ini dapat memungkinkan penyerang untuk mengambil cookies user, yang dapat digunakan untuk mengakses sesi user atau informasi pribadi.
+3. Serangan CSRF (Cross-Site Request Forgery) dapat menyebabkan user yang sudah diautentikasi melakukan tindakan tanpa sepengetahuan mereka. Penyerang dapat memaksa user untuk mengirim permintaan yang tidak disengaja ke aplikasi dengan cookies sesi yang sah, yang dapat menyebabkan aksi yang tidak diinginkan.
+4. Jika menyimpan data sensitif seperti informasi login atau informasi pribadi dalam cookies, risiko kebocoran data meningkat. Meskipun data dienkripsi, ada kemungkinan risiko jika cookie dicuri atau disusupi.
+5. Jika sesi user tidak memiliki waktu kadaluarsa yang sesuai, cookies sesi dapat tetap aktif terlalu lama, yang dapat membahayakan keamanan jika user lupa untuk logout atau meninggalkan komputer mereka terbuka.
+
+### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+1. Pertama saya mengaktifkan virtual environment
+2. Lalu saya melakuka import beberapa modul yang diperlukan, seperti UserCreationForm
+3. Untuk menghasilkan form regis secara otomatis, saya membuat fungsi register
+4. Membuat berkas HTML yang digunakan untuk tampilan dari hasil form pendaftaran akun user ketika data disubmit
+5. Dalam berkas urls.py saya import fungsi register dan menambahkan path URL ke urlpatterns
+6. Lalu saya import lagi fungsi login dengan nama login_user dan authenticate dengan cara yang sama
+7. Import logout dan membuat fungsi logout
+8. Saya menambahkan sebuah tag hyperlink yang dimiliki fungsi logout pada berkas main.html
+9. views.py yang ada pada subdirektori main saya buka dan menambahkan import login_required pada bagian paling atas untuk melakukan proses otorisasi (membatasi akses pengguna)
+10. Lalu saya menambahkan kode @login_required(login_url='/login') di atas fungsi show_main agar halaman main hanya dapat diakses oleh pengguna yang sudah login (terautentikasi).
+11. Setelah itu, saya membuat akun untuk menghubungkan Item dan Product, dengan cara Import User ke models.py
+12. Pada fungsi create_product di views.py saya mengubah kode untuk mencegah Django agar tidak langsung menyimpan objek yang telah dibuat dari form langsung ke database
+13. Terakhir, saya melakukan migrasi untuk menyimpan semua perubahan di sistem.
+
+
