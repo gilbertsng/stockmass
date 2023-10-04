@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<body>
+    <div class="container">
+        <h1>Edit Product</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Edit Product" class="btn-edit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+<style>
+    body {
+    display: grid;
+    place-items: center;
+    height: 100vh; /* Mengisi tinggi viewport untuk memastikan elemen berada di tengah vertikal */
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif; 
+    }
+
+    .container {
+        width: 350px;
+        padding: 20px;
+        background-color: #f5f5f5;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    h1 {
+        text-align: center;
+        color: #007bff; 
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+    form {
+        margin-bottom: 15px;
+    }
+
+    table {
+        margin: 0 auto;
+    }
+
+
+    input[type="text"],
+    input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+    }
+
+
+    .btn-edit {
+        background-color: #1870d4; 
+        color: #fff;
+        font-size: 16px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    /* Tombol Edit Product hover effect */
+    .btn-edit:hover {
+        background-color: #1262b8;
+    }
+</style>
+</html>
