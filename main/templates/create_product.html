@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="container">
-    <h1 class="title">Add New Product</h1>
+    <h1 class="title" id='exampleModal'>Add New Product</h1>
     <form method="POST" class="product-form">
         {% csrf_token %}
         {{ form.as_p }}

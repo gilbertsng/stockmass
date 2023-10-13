@@ -287,4 +287,42 @@ saya melakukan beberapa modifikasi pada CSS. CSS saya disatuka di file html yang
         background-color: #1262b8;
     }
 <"/style">
+---
+---
 
+## README Tugas 6
+### 1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+Synchronous programming mengharuskan eksekusi berurutan di mana function 1 harus diselesaikan terlebih dahulu sebelum function 2 dan function berikutnya dapat dimulai. Synchronous programming memudahkan penulisan dan pemahaman program, tetapi bisa terasa lambat jika tindakan memerlukan waktu lama atau terjadi kesalahan. Sebaliknya, asynchronous programming mengizinkan penundaan eksekusi, yang berarti function 2 dan seterusnya dapat dimulai tanpa harus menunggu function 1 hingga selesai, sehingga memungkinkan function 2 dan yang lainnya untuk berjalan secara bersamaan dalam waktu yang sama. Asynchronous programming dapat membuat penulisan dan pemahaman program lebih kompleks karena alur eksekusi tidak mengikuti urutan kode.
+
+### 2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+Paradigma event-driven programming adalah pendekatan pemrograman di mana program merespons peristiwa (event) yang terjadi, seperti interaksi pengguna, input, atau perubahan keadaan sistem, dan menjalankan tindakan atau fungsi yang sesuai dengan peristiwa tersebut. Ini berarti program tidak menjalankan operasi secara berurutan, melainkan menunggu dan merespons peristiwa yang terjadi asinkronus.
+
+Dalam tugas ini yang melibatkan JavaScript dan AJAX, salah satu contoh penerapan paradigma event-driven programming adalah ketika mengambil dan menampilkan data produk pada halaman web. Ketika pengguna mengakses halaman, JavaScript dapat merespons peristiwa seperti klik tombol "Add Product by AJAX" pada produk tertentu. Ketika pengguna melakukan klik pada button tersebut, event-driven programming memungkinkan JavaScript untuk mengirim permintaan AJAX ke server dan menangani hasilnya tanpa harus memuat ulang seluruh halaman.
+
+### 3. Jelaskan penerapan asynchronous programming pada AJAX.
+Penerapan asynchronous programming pada ajax merujuk pada pendekatan di mana permintaan data ke server atau operasi lainnya dapat dilakukan secara asinkron, tanpa harus menghentikan eksekusi kode JavaScript.Hal ini menghasilkan responsifitas yang lebih baik dalam halaman web, memungkinkan pengguna untuk tetap berinteraksi dengan halaman tanpa harus menunggu permintaan data selesai. Callback functions sering digunakan dalam asynchronous programming untuk menangani respons dari server atau operasi lainnya dengan lebih terstruktur dan responsif, serta memungkinkan perubahan tampilan halaman secara dinamis sesuai dengan data yang tiba, meningkatkan pengalaman pengguna secara keseluruhan.
+
+### 4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+a. Kompatibilitas Peramban:
+    - Fetch API cocok untuk peramban modern.
+    - jQuery lebih sesuai untuk peramban lama.
+b. Pengelolaan Respons Asinkron:
+    - Fetch API menggunakan Promise, menghindari masalah "callback hell."
+    - jQuery menggunakan callback yang lebih fleksibel.
+c. Kemudahan Penggunaan:
+    - jQuery menyediakan antarmuka lebih sederhana, terutama untuk tugas seperti pengiriman data JSON.
+    - Fetch API memberikan lebih banyak kontrol pada permintaan dan respons.
+d. Konversi Respons:
+    - Fetch API memiliki metode bawaan untuk mengubah respons menjadi berbagai tipe data.
+    - jQuery memerlukan penentuan jenis data di awal dengan opsi dataType.
+
+### 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+a. Membuat fungsi get_item_json pada views.py, digunakan untuk menampilkan data produk pada HTML dalam bentuk JSON. Setelah itu, membuat fungsi "add_product_ajax" menambahkan produk baru ke basis data dengan AJAX dengan cara import csrf_exempt.
+b. Pada file main.html, saya akan menggunakan Fetch API untuk mengambil item. Ini dilakukan dengan menambahkan blok kode script di akhir dokumen HTML dan membuat fungsi asinkron bernama getItems.
+c. Lalu saya menambahkan fungsi pada blok kode script, yaitu async function refreshProducts() untuk memunculkan cards yang menggunakan AJAX.Fungsi ini akan mengambil data item terbaru, memperbarui informasi yang ada, seperti jumlah item yang tersimpan, dan melakukannya secara asinkron.
+d. Pada blok kode script saya menambahkan function untuk menambahkan product.
+e. Membuat fungsi "delete_item_ajax" dalam views.py yang akan digunakan untuk menghapus item dengan parameter ID dari item yang akan dihapus dan membuat fungsi "deleteProduct(id)" dalam blok kode script pada file main.html yang digunakan untuk menghapus item menggunakan AJAX.
+f. Lalu saya membuat btn pada cards (AJAX) untuk menghapus dan edit item dalam file main.html.
+g. Menjalankan perintah collectstatic untuk mengumpulkan atau menggabungkan berkas statis seperti file JavaScript, CSS, gambar, dan lainnya ke dalam satu direktori yang akan digunakan oleh server web.
+---
+---
