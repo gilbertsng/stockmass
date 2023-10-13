@@ -1,6 +1,6 @@
 # Kevin Gilbert Sinaga - 2206826053
 # PBP F
-https://github.com/gilbertsng/stockmass
+## tautan aplikasi : https://kevin-gilbert-tugas.pbp.cs.ui.ac.id
 
 ## README Tugas 2
 ### 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
